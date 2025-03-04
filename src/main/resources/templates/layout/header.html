@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>header</title>
+</head>
+<body>
+    <header th:fragment="header">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <!-- 네비게이션 로고 -->
+                <a class="navbar-brand" th:href="@{/}">환율 계산기</a>
+
+                <!-- 햄버거 -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- 버튼 경로 -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" th:href="@{/}">메인</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/exchange-info}">환전 상세</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/graph}">환율 그래프</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+    </header>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>exchange</title>
+</head>
+<body>
+
+<div th:fragment="main">
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">환전 계산기</h2>
+
+    <form>
+        <div class="row align-items-center">
+
+            <!-- 왼쪽: 변환할 통화 선택 -->
+            <div class="col-md-4">
+                <label for="fromCurrency" class="form-label">보유 통화</label>
+                <select class="form-select" id="fromCurrency">
+                    <option value="KRW">🇰🇷 한국 원 (KRW)</option>
+                    <option value="USD">🇺🇸 미국 달러 (USD)</option>
+                    <option value="EUR">🇪🇺 유로 (EUR)</option>
+                    <option value="JPY">🇯🇵 일본 엔 (JPY)</option>
+                    <option value="CNY">🇨🇳 중국 위안 (CNY)</option>
+                    <option value="GBP">🇬🇧 영국 파운드 (GBP)</option>
+                </select>
+            </div>
+
+
+            <!-- 금액 입력 -->
+            <div class="col-md-4">
+                <label for="amountInput" class="form-label">금액 입력</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="amountInput" placeholder="금액 입력">
+                </div>
+            </div>
+
+
+            <!-- 오른쪽: 환전할 통화 선택 -->
+            <div class="col-md-4">
+                <label for="toCurrency" class="form-label">환전할 통화</label>
+                <select class="form-select" id="toCurrency">
+                    <option value="USD">🇺🇸 미국 달러 (USD)</option>
+                    <option value="EUR">🇪🇺 유로 (EUR)</option>
+                    <option value="JPY">🇯🇵 일본 엔 (JPY)</option>
+                    <option value="CNY">🇨🇳 중국 위안 (CNY)</option>
+                    <option value="GBP">🇬🇧 영국 파운드 (GBP)</option>
+                    <option value="KRW">🇰🇷 한국 원 (KRW)</option>
+                </select>
+            </div>
+        </div>
+
+
+        <!-- 버튼 -->
+        <div class="text-center mt-4">
+            <button type="button" class="btn btn-primary" id="calculateButton">계산</button>
+        </div>
+    </form>
+
+
+    <!-- 계산 결과 표시 -->
+    <div class="mt-4">
+        <h4 class="text-center">환전 결과</h4>
+        <p class="text-center fs-5">
+            <span id="resultAmount">0</span> <span id="resultCurrency"></span>
+        </p>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
