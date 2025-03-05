@@ -2,7 +2,7 @@ $(function(){
     $("#calculateButton").click(function (){
         let fromCurrency = $("#fromCurrency").val();
         let toCurrency = $("#toCurrency").val();
-        let amountInput = parseFloat($("#amountInput").val());
+        let amountInput = parseFloat($("#amountInput").val().replace(/,/g,""));
 
         //검증
         if(isNaN(amountInput) || amountInput<=0){
@@ -24,7 +24,8 @@ $(function(){
 
     //성공시
     function handleSuccess(response){
-        $("#resultAmount").text(response.result);
+        let convertedAmount = parseFloat(response.result).toFixed(2);
+        $("#resultAmount").text(convertedAmount);
     }
 
     //에러

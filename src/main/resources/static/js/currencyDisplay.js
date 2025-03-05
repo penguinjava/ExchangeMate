@@ -1,4 +1,4 @@
-$(document).ready(function (){
+$(function (){
     let $toCurrency = $("#toCurrency");
     let $fromCurrency = $("#fromCurrency");
 
@@ -21,4 +21,15 @@ $(document).ready(function (){
 
     updateToCurrency();
     updateFromCurrency();
+
+    //input
+    function numberInput(){
+        let value =$(this).val().replace(/,/g,"").replace(/\D/g,"");
+        if(value !== ""){
+            $(this).val(Number(value).toLocaleString());
+        }
+    }
+
+    //입력 천단위 구분
+    $("#amountInput").on("input",numberInput);
 });
