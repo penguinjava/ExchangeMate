@@ -10,8 +10,6 @@ class CurrencyExchangeService(
     private val exchangeKey: ExchangeKey,
 ) {
 
-    private val apiKey = exchangeKey.apiKey
-
     //환전 계산 api
     fun convert(from: String, to: String, amount: Float): Double? {
 
@@ -21,7 +19,7 @@ class CurrencyExchangeService(
                 .queryParam("from", from)
                 .queryParam("to", to)
                 .queryParam("amount", amount)
-                .queryParam("access_key", apiKey)
+                .queryParam("access_key", exchangeKey.apiKey)
                 .build()
             }
             .retrieve()
