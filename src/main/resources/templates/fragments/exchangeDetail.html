@@ -8,13 +8,110 @@
 
 <div th:fragment="maindetail">
 
-  <h1>메인 상세 장보</h1>
+    <h3 class="text-center mb-4">실시간 환율</h3>
+
+    <div class="col-md-4 mx-auto mb-4">
+        <label for="source" class="form-label">보유 통화</label>
+        <select class="form-select" id="source">
+            <option value="KRW">🇰🇷 한국 원 (KRW)</option>
+            <option value="USD">🇺🇸 미국 달러 (USD)</option>
+            <option value="JPY">🇯🇵 일본 엔 (JPY)</option>
+            <option value="EUR">🇪🇺 유럽 유로(EUR)</option>
+            <option value="CNY">🇨🇳 중국 위안 (CNY)</option>
+            <option value="GBP">🇬🇧 영국 파운드 (GBP)</option>
+            <option value="AUD">🇦🇺 호주 달러 (AUD)</option>
+        </select>
+    </div>
+
+    <!-- 여기에 ID를 제대로 추가합니다! -->
+    <div class="container">
+        <div class="row g-3">
+
+            <div class="col-md-4">
+                <div class="border border-primary rounded-3 p-3 text-center">
+                    <h6 class="mb-4" id="box1"></h6>
+                    <div class="spinner-border text-primary">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 아래 동일하게 6개 구성 -->
+            <div class="col-md-4">
+                <div class="border border-primary rounded-3 p-3 text-center">
+                    <h6 class="mb-4" id="box2"></h6>
+                    <div class="spinner-border text-primary">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="border border-primary rounded-3 p-3 text-center">
+                    <h6 class="mb-4" id="box3"></h6>
+                    <div class="spinner-border text-primary">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="border border-primary rounded-3 p-3 text-center">
+                    <h6 class="mb-4" id="box4"></h6>
+                    <div class="spinner-border text-primary">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="border border-primary rounded-3 p-3 text-center">
+                    <h6 class="mb-4" id="box5"></h6>
+                    <div class="spinner-border text-primary">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="border border-primary rounded-3 p-3 text-center">
+                    <h6 class="mb-4" id="box6"></h6>
+                    <div class="spinner-border text-primary">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 
 </div>
 
-<div th:fragment="detail" class="border border-primary rounded-3 p-3 container mt-3">
 
-  <h1>index 상세 장보</h1>
+
+
+<div th:fragment="detail1" class="border border-primary rounded-3 p-3 container mt-3">
+
+    <h3 class="text-center mb-4">어제 환율</h3>
+
+    <div id="yesterday-rate" class="text-center fs-4">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+</div>
+
+<div th:fragment="detail2" class="border border-primary rounded-3 p-3 container mt-3">
+
+    <h3 class="text-center mb-4">실시간 환율</h3>
+
+    <div id="today-rate" class="text-center fs-4">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
 
 </div>
 
