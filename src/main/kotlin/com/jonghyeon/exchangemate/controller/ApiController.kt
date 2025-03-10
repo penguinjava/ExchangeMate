@@ -28,4 +28,32 @@ class ApiController (
         }
     }
 
+    @GetMapping("/live")
+    fun liveCurrencies(
+        @RequestParam source: String
+    ): Map<String, Any> {
+
+        val result = currencyExchangeService.live(source)
+
+        return mapOf(
+            "source" to source,
+            "quotes" to result
+        )
+
+    }
+
+
+    @GetMapping("/historical")
+    fun historical(
+        @RequestParam date: String
+    ): Map<String, Any> {
+
+        val result = currencyExchangeService.historical(date)
+
+        return mapOf(
+            "quotes" to result
+        )
+
+    }
+
 }

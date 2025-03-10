@@ -18,9 +18,4 @@ class MainController {
         return "page/exchange-info"
     }
 
-    @GetMapping("/graph")
-    fun graph(model: Model): String {
-        model.addAttribute("message", "환율 그래프")
-        return "page/graph"
-    }
 }
